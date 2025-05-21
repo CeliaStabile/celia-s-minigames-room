@@ -19,8 +19,8 @@ export default function GameCard({ title, image, link }: GameCardProps) {
     
 
   return (
-    <div className="bg-indigo-900 border-3 border-yellow-500">
-          <p>{title}</p>
+    <div className="bg-indigo-950 border-4 border-yellow-500  w-56 lg:w-80 p-6 text-center flex flex-col gap-5">
+          <p className="text-xl pixel-shadow uppercase">{title}</p>
           <img src={image} />
 <Button button={button} />
     </div>

@@ -19,7 +19,7 @@ export default function Banner({ title, description, button, background = "dark"
         className
       )}
     >
-      {title && <h1 className="text-3xl pixel-shadow">{title}</h1>}
+      {title && <h1 className="text-3xl pixel-shadow uppercase">{title}</h1>}
       {description && <p >{description}</p>}
     </section>
   );
