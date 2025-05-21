@@ -9,19 +9,21 @@ const button = {
 };
 
 const Home = () => {
-    return (
-      <>
-        <Banner
-          title={"Celia's minigames room"}
-          background={"dark"}
-          description={
-            "Loren ipsum dolor sit amet, consetetuer adipiscing elit"
-          }
-          className="mt-20"
-        />
-            <GameCard title={"word search" } image={"/wordsearch.png"} link={"/wordsearch"} />
-      </>
-    );
+  return (
+    <section className="pb-96">
+      <Banner
+        title={"Celia's minigames room"}
+        background={"dark"}
+        description={"Loren ipsum dolor sit amet, consetetuer adipiscing elit"}
+        className="mt-20"
+      />
+      <Banner
+        title={"Choose your game"}
+        background={"light"}
+        games
+      />
+    </section>
+  );
 };
 
 export default Home;
