@@ -1,5 +1,5 @@
 .pixelButton{
-    @apply  text-yellow-400 text-sm bg-pink-600 border-4 border-yellow-400 px-6 py-4;
+    @apply  text-yellow-400 text-sm bg-pink-600 border-4 border-yellow-400 px-6 py-4 hover:bg-pink-400;
     box-shadow:
     4px 4px 0px 0px #940218;
     position: relative;
