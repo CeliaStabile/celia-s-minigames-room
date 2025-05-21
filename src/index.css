@@ -1,0 +1,26 @@
+@import "@fontsource/press-start-2p";
+
+:root {
+  background-image: url("/bg.png");
+  background-repeat: repeat;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:antiquewhite;
+
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 50px;
+  font-family: "Press Start 2P", cursive;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
