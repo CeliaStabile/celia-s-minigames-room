@@ -5,8 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         "stars": "url('/bg.png')",
-        "footer-texture": "url('/img/footer-texture.png')",
       },
+      
     },
   },
   plugins: [],

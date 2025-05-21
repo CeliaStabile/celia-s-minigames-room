@@ -1,12 +1,25 @@
 import React from "react";
-import Button from "../components/button";
+import Button from "../components/Button/Button";
+import Banner from "../components/Banner";
+
+const button = {
+  text: "Play",
+  link: "/about",
+};
 
 const Home = () => {
     return (
-      <section className="flex flex-col gap-5 items-center justify-center">
-            <p>Home</p>
-          <Button text={"Play"} link={"/"} />  
-      </section>
+      <>
+        <Banner
+          title={"Celia's minigames room"}
+          background={"dark"}
+          description={
+            "Loren ipsum dolor sit amet, consetetuer adipiscing elit"
+          }
+          className="mt-20"
+        />
+        
+      </>
     );
 };
 

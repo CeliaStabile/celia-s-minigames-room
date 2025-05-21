@@ -17,8 +17,18 @@
 html, body {
   height: 100%;
   padding: 0;
-  margin: 50px;
+  /* margin: 50px; */
   font-family: "Press Start 2P", cursive;
+}
+
+
+.pixel-shadow {
+  color: #ffc63f;
+  text-shadow:
+    0 1px #940218,
+    0 2px #940218,
+    0 3px #6c0212,
+    0 4px #3b000a;
 }
 
 @tailwind base;
