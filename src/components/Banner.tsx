@@ -33,7 +33,7 @@ export default function Banner({ title, description, button, background = "dark"
           <GameCard
             title={"word search"}
             image={"/wordsearch.png"}
-            link={"/wordsearch"}
+            link={"/word-search"}
           />
           <GameCard
             title={"hangman"}

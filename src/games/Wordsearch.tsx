@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { motion } from "motion/react";
+import Button from "../components/Button/Button";
 
 type Position = [number, number];
 type Word = { word: string; found: boolean };
@@ -12,10 +13,12 @@ export default function WordSearch() {
   const [winningSelectedCells, setWinningSelectedCells] = useState<
     Position[] | null
   >(null);
+  const [usedCells, setUsedCells] = useState<Position[] | null>(null);
+  const [userWon, setUserWon] = useState(false);
 
   const [wordList, setWordList] = useState<Word[]>([
-    { word: "POXITO", found: false },
-    { word: "EMILIA", found: false },
+    { word: "HELLO", found: false },
+    { word: "MONKEY", found: false },
     { word: "BRAIN", found: false },
     { word: "CEREAL", found: false },
     { word: "SHOP", found: false },
@@ -27,12 +30,12 @@ export default function WordSearch() {
   ]);
 
   const grid = [
-    ["P", "O", "X", "I", "T", "O", "E", "A", "S", "E"],
-    ["D", "E", "G", "G", "S", "Y", "E", "H", "H", "N"],
-    ["B", "R", "C", "I", "H", "O", "M", "E", "O", "T"],
-    ["R", "O", "P", "E", "U", "L", "I", "R", "P", "S"],
-    ["A", "E", "R", "E", "R", "L", "L", "G", "U", "H"],
-    ["I", "C", "S", "P", "S", "E", "I", "P", "M", "O"],
+    ["H", "E", "L", "L", "O", "O", "M", "A", "S", "E"],
+    ["D", "E", "G", "G", "S", "Y", "O", "H", "H", "N"],
+    ["B", "R", "C", "I", "H", "O", "N", "E", "O", "T"],
+    ["R", "O", "P", "E", "U", "L", "K", "R", "P", "S"],
+    ["A", "E", "R", "E", "R", "L", "E", "G", "E", "H"],
+    ["I", "C", "S", "P", "S", "E", "Y", "P", "M", "O"],
     ["N", "N", "K", "S", "L", "O", "A", "H", "C", "P"],
     ["E", "K", "N", "O", "N", "O", "M", "L", "E", "E"],
     ["E", "M", "O", "L", "C", "A", "K", "E", "D", "R"],
@@ -128,6 +131,7 @@ export default function WordSearch() {
         //si le mot est dans la liste, cellules en jaunes, sinon cellules en gris
         if (isWordFound) {
           setWinningSelectedCells(result.path);
+          setUsedCells((prev) => [...(prev ?? []), ...result.path]);
         } else {
           setSelectedCells(result.path);
         }
@@ -145,69 +149,121 @@ export default function WordSearch() {
     }
   }, [end]);
 
+  useEffect(() => {
+    if (wordList.every((word) => word.found)) setUserWon(true);
+  }, [wordList]);
+
+  function handleWinButton() {
+    setWordList((prev) => prev.map((item) => ({ ...item, found: true })));
+  }
+
+  function handleResetButton() {
+    setWordList((prev) => prev.map((item) => ({ ...item, found: false })));
+    setUserWon(false);
+    setUsedCells(null);
+    setStart(null);
+    setEnd(null);
+    setSelectedCells(null);
+    setWinningSelectedCells(null);
+  }
+
+  const buttonWin = {
+    onClick: handleWinButton,
+    text: "you win button",
+  };
+
+  const buttonReset = {
+    onClick: handleResetButton,
+    text: "reset",
+  };
+
   return (
-    <section className="p-10 flex flex-col items-center justify-center">
-      <h1 className="mb-8">Word Search</h1>
+    <section className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative ">
+      <div className="relative  z-20">
+        {grid.map((row, x) => (
+          <div key={x} className="flex cursor-pointer ">
+            {row.map((cell, y) => {
+              //la cellule fait partie du mot sélectionné mais pas dans la liste
+              const isSelected =
+                selectedCells &&
+                selectedCells.some(([row, col]) => row === x && col === y);
 
-      {grid.map((row, x) => (
-        <div key={x} className="flex cursor-pointer">
-          {row.map((cell, y) => {
-            //fait partie du mot sélectionné mais pas dans la liste
-            const isSelected =
-              selectedCells &&
-              selectedCells.some(([row, col]) => row === x && col === y);
+              //la cellule fait partie d'un mot dans la liste
+              const isWinning =
+                winningSelectedCells &&
+                winningSelectedCells.some(
+                  ([row, col]) => row === x && col === y
+                );
 
-            //fait partie d'un mot dans la liste
-            const isWinning =
-              winningSelectedCells &&
-              winningSelectedCells.some(([row, col]) => row === x && col === y);
+              //la cellule a été utilisée pour un mot trouvé
+              const hasBeenUsed =
+                usedCells &&
+                usedCells.some(([row, col]) => row === x && col === y);
 
-            //est la première cellule cliquée
-            const isStart = start?.[0] === x && start?.[1] === y;
+              //est la première cellule cliquée
+              const isStart = start?.[0] === x && start?.[1] === y;
 
-            return (
-              <motion.div
-                className={clsx([
-                  "border-1 border-black w-10 h-10 flex justify-center items-center",
-                  isSelected
-                    ? "bg-red-300"
-                    : isWinning
-                    ? "bg-yellow-500"
-                    : "hover:bg-gray-200",
-                ])}
-                key={y}
-                onClick={() => handleClick(x, y)}
-                animate={
-                  isWinning
-                    ? { scale: [1, 1.3, 1] }
-                    : isSelected
-                    ? { x: [-5, 5, -5, 5, 0] }
-                    : isStart
-                    ? { scale: [1, 1.15, 1] }
-                    : undefined
-                }
-                transition={{
-                  duration: 0.4,
-                  ease: isWinning ? "easeInOut" : undefined,
-                }}
-              >
-                <p> {cell}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      ))}
-      <div className="flex gap-5 mt-5">
+              let cellBackground = "";
+
+              if (isWinning) {
+                cellBackground = "bg-yellow-500";
+              } else if (isSelected) {
+                cellBackground = "bg-red-300";
+              } else if (hasBeenUsed) {
+                cellBackground = "bg-indigo-950";
+              } else {
+                cellBackground = "hover:bg-blue-400";
+              }
+
+              return (
+                <motion.div
+                  className={clsx([
+                    "border-1 border-black w-9 h-9 flex justify-center items-center",
+                    cellBackground,
+                  ])}
+                  key={y}
+                  onClick={() => handleClick(x, y)}
+                  animate={
+                    isWinning
+                      ? { scale: [1, 1.3, 1] }
+                      : isSelected
+                      ? { x: [-5, 5, -5, 5, 0] }
+                      : isStart
+                      ? { scale: [1, 1.15, 1] }
+                      : undefined
+                  }
+                  transition={{
+                    duration: 0.4,
+                    ease: isWinning ? "easeInOut" : undefined,
+                  }}
+                >
+                  <p> {cell}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        ))}
+        {userWon && (
+          <p style={{top: "35%", left: "54%"} } className=" animate-retro-drop-in pixel-shadow text-5xl z-50 absolute  ">
+            You win!
+          </p>
+        )}
+      </div>
+
+      <div className="flex gap-5 mt-8 flex-wrap justify-center">
         {wordList.map((word, i) => (
           <motion.p
             key={i}
-            className={clsx(word.found && "line-through")}
+            className={clsx(word.found && "text-yellow-500 underline")}
             animate={word.found ? { scale: [1, 1.3, 1] } : undefined}
           >
             {word.word}
           </motion.p>
         ))}
       </div>
+
+      <Button className="mt-8" button={buttonWin} />
+      <Button className="mt-8" button={buttonReset} />
     </section>
   );
 }
