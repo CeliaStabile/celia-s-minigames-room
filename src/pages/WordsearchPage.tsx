@@ -1,6 +1,5 @@
-import Button from "../components/Button/Button";
 import Banner from "../components/Banner";
-import WordSearch from "../games/Wordsearch";
+import WordSearch from "../games/Wordsearch/Wordsearch";
 
 
 const button = {
