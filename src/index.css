@@ -31,9 +31,11 @@ html, body {
     0 4px #3b000a;
 }
 
-.blink-delay {
-  animation-delay: 4s;
-  animation-fill-mode: forwards;
+.pixel-clean {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: none;
 }
 
 @tailwind base;
