@@ -208,6 +208,7 @@ export default function WordSearch() {
                       "border-1 border-black w-9 h-9 flex justify-center items-center pixel-clean",
                       cellBackground,
                     ])}
+                    data-testid={`cell-${x}-${y}`}
                     key={y}
                     onClick={() => handleClick(x, y)}
                     animate={
