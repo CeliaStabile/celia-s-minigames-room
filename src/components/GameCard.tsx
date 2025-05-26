@@ -9,7 +9,7 @@ type GameCardProps = {
 
 export default function GameCard({ title, image, link }: GameCardProps) {
   const button = {
-    text: "Play",
+    text: "Start",
     link: link,
   };
 

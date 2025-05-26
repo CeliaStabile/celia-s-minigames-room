@@ -14,7 +14,7 @@ const WordsearchPage = () => {
         title={"Word search"}
         background={"dark"}
         description={
-          "How to play :  find all the hidden words in the letter grid. Words may be placed horizontally, vertically, or diagonally — and forward or backward!"
+          "How to play :  find all the hidden words from the list in the letter grid. Words may be placed horizontally, vertically, or diagonally — and forward or backward!"
         }
         className="mt-20"
       />

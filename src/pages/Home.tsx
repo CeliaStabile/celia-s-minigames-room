@@ -14,14 +14,10 @@ const Home = () => {
       <Banner
         title={"Celia's minigames room"}
         background={"dark"}
-        description={"Loren ipsum dolor sit amet, consetetuer adipiscing elit"}
+        description={"Pick a game, press start, and let the fun begin."}
         className="mt-20"
       />
-      <Banner
-        title={"Choose your game"}
-        background={"light"}
-        games
-      />
+      <Banner title={"Choose your game"} background={"light"} games />
     </section>
   );
 };

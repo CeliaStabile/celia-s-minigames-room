@@ -12,7 +12,7 @@ export default function WordSearch() {
   const [levelIndex, setLevelIndex] = useState<number>(0)
   const currentLevel = wordsearchData[levelIndex]
   const [wordList, setWordList] = useState<Word[]>(
-    currentLevel.words.map((w) => ({ word: w, found: false }))
+    currentLevel.words.map((w) => ({ word: w, found: true }))
   );
   const grid = currentLevel.grid;
 
