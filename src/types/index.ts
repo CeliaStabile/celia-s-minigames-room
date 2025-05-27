@@ -4,3 +4,4 @@ export type ButtonData = {
   onClick?: () => void;
 };
 
+export type GameStatus =  "pending" | "win" | "lose"

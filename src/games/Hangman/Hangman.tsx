@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import wordData from "../../data/hangmandata.json";
-import WordToFind from "./WordToFind";
+import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
 import Drawing from "./Drawing";
+import Button from "../../components/Button/Button";
+import type { GameStatus } from "../../types";
 
 export default function Hangman() {
-  //word to find is an object : {letter : a, found; false}. Provient d'une liste de mot stockée dans data, au hasard
   const [randomWordIndex, setRandomWordIndex] = useState<number>(
     Math.floor(Math.random() * wordData.length)
   );
@@ -14,9 +15,6 @@ export default function Hangman() {
     { letter: string; found: boolean }[]
   >([...currentWord].map((letter) => ({ letter: letter, found: false })));
 
-  //stocker lettre de l'utilisateur
-  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
-
   //stocker la liste des lettres déja utilisées
   const [usedLetters, setUsedLetters] = useState<string[] | []>([]);
 
@@ -24,8 +22,14 @@ export default function Hangman() {
   const [userErrors, setUserErrors] = useState(0);
 
   //Game status : perdu, gagné
-  const [gameStatus, setGameStatus] = useState<string | null>(null);
+  const [gameStatus, setGameStatus] = useState<GameStatus>("pending");
 
+  const button = {
+    text: "Play again",
+    onClick: handlePlayAgainClick,
+  };
+
+  console.log(wordToFind);
   //on click sur clavier function :
   function handleLetterClick(letter: string) {
     setUsedLetters((prev) => [...prev, letter]);
@@ -44,43 +48,46 @@ export default function Hangman() {
     }
   }
 
-  // useEffect(() => (
-  //     //vérifier si toutes les lettres de word to find sont found true.
-  //     setGameStatus("win")
+  useEffect(() => {
+    // vérifier si toutes les lettres de word to find sont found true.
+    if (wordToFind.every((word) => word.found)) setGameStatus("win");
 
-  //     //vérifier si le nombre d'erreurs = 7. Si 7, lancer loose animation
-  //     setGameStatus("lose")
-  // ), [userErrors, wordToFind]);
+    if (userErrors > 6) setGameStatus("lose");
+  }, [userErrors, wordToFind]);
 
   //button play again
-
   function handlePlayAgainClick() {
-    //reset tous les states
-    //set wordToFind même chose qu'au début, random mot, transformer en objet avec found false
+    setUsedLetters([]);
+    setUserErrors(0);
+    setGameStatus("pending");
+    setRandomWordIndex(Math.floor(Math.random() * wordData.length));
+    setWordToFind(
+      [...currentWord].map((letter) => ({ letter: letter, found: false }))
+    );
   }
 
   return (
-    <div className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative gap-5">
-      {/* Composant word to find. 
-        Map sur wordTofind.letter. Si found -> display block, sinon display hidden et trait en dessous de la lettre */}
-      <WordToFind word={wordToFind} />
-      {/* composant hangManDrawing ? ou le faire ici directement ?  */}
-      {/* passer à hangManDrawing le nombre d'erreurs, et en fonction du nombre, afficher ou non la partie. Ex : si userError = 1,
-        afficher la potence + la corde, si 2, la potence, la corde + la tête etc */}
+    <div className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative gap-10">
+      <Drawing errors={userErrors} className={"w-1/2"} />
+      <HangmanWord word={wordToFind} />
+      <Keyboard
+        onClick={handleLetterClick}
+        usedLetters={usedLetters}
+        gameStatus={gameStatus}
+        className="lg:w-2/3 mb-6 "
+      />
 
-      {/* Clavier */}
-      <Keyboard onClick={handleLetterClick} usedLetters={usedLetters} />
-      {/* Map sur lettres de l'alphabet dans des boutons (dans data par ex). On click : handleLetterClick
-        Si la lettre fait partie de usedLetter, bouton disabled. */}
-      
-      <Drawing error={userErrors} />
+      {gameStatus !== "pending" && (
+        <p
+          style={{ top: "35%", left: "54%" }}
+          className=" animate-retro-drop-in pixel-shadow text-5xl z-50 absolute text-center  "
+        >
+          {gameStatus === "win" ? "You win!" : "You lose..."}
+        </p>
+      )}
 
-      {/* end of game animation  */}
-      {/* si gameStatus n'est pas null
-      title : gameStatus === win ? "You win!" : "You lose!" */}
+      <Button button={button} />
 
-      {/* bouton play again */}
-      {/* on click : handlePlayAgainClick */}
     </div>
   );
 }

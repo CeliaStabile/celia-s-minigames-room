@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         stars: "url('/bg.png')",
       },
+      colors: {
+        'antique-white': '#faebd7',
+      },
       keyframes: {
         dropInSteps: {
           "0%": { transform: "translate(-50%, -300px)", opacity: "0" },
@@ -20,6 +23,7 @@ export default {
         "retro-drop-in":
           "dropInSteps 2s steps(10, end) forwards, blink 1s steps(2, end) 2s infinite",
       },
+      
     },
   },
   plugins: [],
