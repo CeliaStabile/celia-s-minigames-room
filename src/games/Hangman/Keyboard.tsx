@@ -49,7 +49,7 @@ export default function Keyboard({ onClick, usedLetters, gameStatus, className }
                 <button
                     key={index}
                     onClick={() => onClick(item)}
-                    className={clsx("border-2 border-antique-white p-3", isAlreadyUsed && "border-2 border-gray-500 text-gray-500")}
+                    className={clsx("border-2 border-antique-white lg:p-3 p-6", isAlreadyUsed && "border-2 border-gray-500 text-gray-500")}
                     disabled={isAlreadyUsed || gameStatus !== "pending"}
                 >
                     {item}

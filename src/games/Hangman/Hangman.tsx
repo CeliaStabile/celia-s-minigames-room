@@ -75,21 +75,26 @@ export default function Hangman() {
   }
 
   return (
-    <div className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative gap-5">
-      <Drawing errors={userErrors} className={"w-1/2"} />
-      <HangmanWord
-        revealAll={revealLetters}
-        word={wordToFind}
-        className="mb-5"
-      />
-      <Keyboard
-        onClick={handleLetterClick}
-        usedLetters={usedLetters}
-        gameStatus={gameStatus}
-        className="lg:w-2/3 "
-      />
+    <section className="relative">
+      <div className="pt-10 pb-5 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm gap-5">
+        <Drawing errors={userErrors} className={"w-1/2"} />
+      </div>
+      <div className="pt-5 pb-10 px-5 flex flex-col items-center justify-center bg-indigo-950 text-xs lg:text-sm gap-5">
+        <HangmanWord
+          revealAll={revealLetters}
+          word={wordToFind}
+          className="mb-5"
+        />
+
+        <Keyboard
+          onClick={handleLetterClick}
+          usedLetters={usedLetters}
+          gameStatus={gameStatus}
+          className="lg:w-2/3 "
+        />
+        <Button button={button} />
+      </div>
       <EndOfGameAnim gameStatus={gameStatus} />
-      <Button button={button} />
-    </div>
+    </section>
   );
 }

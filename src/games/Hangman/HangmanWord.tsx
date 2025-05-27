@@ -17,7 +17,7 @@ export default function HangmanWord({ word, revealAll, className }: HangmanWordP
             <div className="h-6 text-lg">
               {item.found || revealAll ? item.letter : ""}
             </div>
-            <div className="border-t-2 border-antique-white w-full" />
+            <div  className="border-t-2 border-antique-white w-full" />
           </div>
         ))}
       </section>

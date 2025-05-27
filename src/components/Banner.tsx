@@ -40,11 +40,11 @@ export default function Banner({ title, description, button, background = "dark"
             image={"/hangman.png"}
             link={"/hangman"}
           />
-          <GameCard
+          {/* <GameCard
             title={"tic tac toe"}
             image={"/tictactoe.png"}
             link={"/wordsearch"}
-          />
+          /> */}
         </div>
       )}
     </section>

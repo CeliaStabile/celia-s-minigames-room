@@ -1,17 +1,40 @@
-// a tester: 
-// Clavier: la lettre devient bien disabled au click 
+import { describe, it, expect, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import Drawing from "./Drawing";
+import Hangman from "./Hangman";
+import Keyboard from "./Keyboard";
+import HangmanWord from "./HangmanWord";
+ 
 
-// wordToFind:
-// Si la lettre cliquée fait partie du mot, la lettre est affichée dans le composant
-// Si la lettre cliquée n'est pas dans le mot, elle reste hidden
 
+describe("HangmanWord", () => {
+  it("renders underscores if letter not found, but shows letter if it's found", () => {
+    
+    const mockWord = [
+      { letter: "A", found: false },
+      { letter: "B", found: false },
+      { letter: "C", found: true },
+    ];
 
-// HangmanDrawing: 
-// faire un test qui simule que si error = 2, il y a dans le document la div qui a le test id "head"
+    render(<HangmanWord word={mockWord} revealAll={false} />);
 
-// endOfGame: 
-// Si il y a le dessin complet, l'animation you lose se lance bien
-// Si il y a toutes les lettres découvertes dans word to find, et error < 7, l'animation win se lance bien
+    expect(screen.queryByText("A")).not.toBeInTheDocument();
+    expect(screen.queryByText("B")).not.toBeInTheDocument();
+    expect(screen.queryByText("C")).toBeInTheDocument();
+   
+  });
+});
 
-// Play Again button:
-// si on clique sur play again, un mot différent se charge
+// describe("Keyboard", () => {
+//   it("renders underscores if letter not found, but shows letter if it's found", () => {
+//       const mockUsedLetters = [
+//           "A", "B","C"
+//     ];
+
+//     render(<Keyboard usedLetters={mockUsedLetters}/>);
+
+//     expect(screen.queryByText("A")).not.toBeInTheDocument();
+//     expect(screen.queryByText("B")).not.toBeInTheDocument();
+//     expect(screen.queryByText("C")).toBeInTheDocument();
+//   });
+// });
