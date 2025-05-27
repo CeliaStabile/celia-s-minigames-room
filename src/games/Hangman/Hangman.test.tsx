@@ -1,8 +1,5 @@
-import { describe, it, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
-import Drawing from "./Drawing";
-import Hangman from "./Hangman";
-import Keyboard from "./Keyboard";
+import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
 import HangmanWord from "./HangmanWord";
  
 

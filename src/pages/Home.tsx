@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "../components/Button/Button";
 import Banner from "../components/Banner";
-import GameCard from "../components/GameCard";
 
 const button = {
   text: "Play",

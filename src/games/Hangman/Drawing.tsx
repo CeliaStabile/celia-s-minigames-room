@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import clsx from "clsx";
 
 type DrawingProps = {
