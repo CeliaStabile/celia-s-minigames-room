@@ -141,9 +141,6 @@ export default function WordSearch() {
     if (wordList.every((word) => word.found)) setGameStatus("win");
   }, [wordList]);
 
-  useEffect(() => {
-    console.log(gameStatus);
-  }, [gameStatus]);
 
   //update wordlist when level change
   useEffect(() => {
@@ -194,13 +191,13 @@ export default function WordSearch() {
 
                 let cellBackground = "";
                 if (isWinning) {
-                  cellBackground = "bg-yellow-500";
+                  cellBackground = "z-10 bg-yellow-500";
                 } else if (isSelected) {
-                  cellBackground = "bg-red-300";
+                  cellBackground = "z-10 bg-red-300";
                 } else if (isStart) {
-                  cellBackground = "bg-blue-400";
+                  cellBackground = "z-0 bg-blue-400";
                 } else if (hasBeenUsed) {
-                  cellBackground = "bg-indigo-950";
+                  cellBackground = "z-0 bg-indigo-950";
                 } else {
                   cellBackground = "hover:bg-blue-400";
                 }

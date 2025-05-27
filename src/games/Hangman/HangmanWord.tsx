@@ -8,7 +8,6 @@ type HangmanWordProps = {
 
 export default function HangmanWord({ word, revealAll, className }: HangmanWordProps) {
 
-  console.log("hangmanword", word)
 
     return (
         <section className={clsx("flex gap-3 w-full items-center justify-center", className)}>
