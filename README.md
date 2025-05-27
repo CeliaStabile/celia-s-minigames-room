@@ -33,7 +33,7 @@ git clone https://github.com/CeliaStabile/celia-s-minigames-room
 cd minigames
 npm install
 npm run dev
-
+```
 ---
 
 ## 🙋‍♀️ About Me
