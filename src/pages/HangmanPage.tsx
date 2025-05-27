@@ -2,11 +2,6 @@ import Banner from "../components/Banner";
 import Hangman from "../games/Hangman/Hangman";
 
 
-const button = {
-  text: "Play",
-  link: "/about",
-};
-
 const HangmanPage = () => {
   return (
     <section className="pb-96">

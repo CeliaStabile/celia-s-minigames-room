@@ -1,11 +1,7 @@
 import Banner from "../components/Banner";
 import WordSearch from "../games/Wordsearch/Wordsearch";
 
-
-const button = {
-  text: "Play",
-  link: "/about",
-};
+;
 
 const WordsearchPage = () => {
   return (

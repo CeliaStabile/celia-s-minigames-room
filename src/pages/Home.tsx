@@ -1,10 +1,5 @@
-import React from "react";
 import Banner from "../components/Banner";
-
-const button = {
-  text: "Play",
-  link: "/about",
-};
+;
 
 const Home = () => {
   return (
