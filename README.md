@@ -44,4 +44,5 @@ This project is both a playground and a portfolio piece.
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/celia-stabile-b6653b63/)  
 - 💻 [GitHub](https://github.com/CeliaStabile)
+  
 Thanks for visiting!
