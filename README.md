@@ -38,7 +38,8 @@ npm run dev
 
 ## 🙋‍♀️ About Me
 
-Hi! I'm Celia, a front-end developer with a passion for delightful UI and solid, maintainable code.  
+Hi! I'm Celia, a front-end developer who builds interfaces with care and clarity, always aiming to improve with each project.
+  
 This project is both a playground and a portfolio piece.
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/celia-stabile-b6653b63/)  
