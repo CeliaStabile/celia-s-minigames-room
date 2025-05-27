@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { motion } from "motion/react";
-import wordsearchData from "../../data/wordsearchdata.json"
+import wordsearchData from "../../data/wordsearchdata.json";
 import Button from "../../components/Button/Button";
+import EndOfGameAnim from "../../components/EndOfGameAnim";
+import type { GameStatus } from "../../types";
 
 type Position = [number, number];
 type Word = { word: string; found: boolean };
 
 export default function WordSearch() {
   //define grid and words
-  const [levelIndex, setLevelIndex] = useState<number>(0)
-  const currentLevel = wordsearchData[levelIndex]
+  const [levelIndex, setLevelIndex] = useState<number>(0);
+  const currentLevel = wordsearchData[levelIndex];
   const [wordList, setWordList] = useState<Word[]>(
-    currentLevel.words.map((w) => ({ word: w, found: true }))
+    currentLevel.words.map((w) => ({ word: w, found: false }))
   );
   const grid = currentLevel.grid;
 
@@ -24,8 +26,7 @@ export default function WordSearch() {
     Position[] | null
   >(null);
   const [usedCells, setUsedCells] = useState<Position[] | null>(null);
-  const [userWon, setUserWon] = useState(false);
-
+  const [gameStatus, setGameStatus] = useState<GameStatus>("pending");
 
   //Record selected start and end cells coordinates
   function handleClick(x: number, y: number) {
@@ -137,19 +138,21 @@ export default function WordSearch() {
 
   //check when user won
   useEffect(() => {
-    if (wordList.every((word) => word.found)) setUserWon(true);
+    if (wordList.every((word) => word.found)) setGameStatus("win");
   }, [wordList]);
+
+  useEffect(() => {
+    console.log(gameStatus);
+  }, [gameStatus]);
 
   //update wordlist when level change
   useEffect(() => {
     setWordList(currentLevel.words.map((w) => ({ word: w, found: false })));
   }, [levelIndex]);
 
-
-
   function handlePlayAgainClick() {
-   setLevelIndex((level) => (level + 1) % wordsearchData.length)
-    setUserWon(false);
+    setLevelIndex((level) => (level + 1) % wordsearchData.length);
+    setGameStatus("pending");
     setUsedCells(null);
     setStartCell(null);
     setEndCell(null);
@@ -157,7 +160,6 @@ export default function WordSearch() {
     setWinningSelectedCells(null);
   }
 
- 
   const playAgainButton = {
     onClick: handlePlayAgainClick,
     text: "Play Again",
@@ -191,11 +193,12 @@ export default function WordSearch() {
                 const isStart = startCell?.[0] === x && startCell?.[1] === y;
 
                 let cellBackground = "";
-
                 if (isWinning) {
                   cellBackground = "bg-yellow-500";
                 } else if (isSelected) {
                   cellBackground = "bg-red-300";
+                } else if (isStart) {
+                  cellBackground = "bg-blue-400";
                 } else if (hasBeenUsed) {
                   cellBackground = "bg-indigo-950";
                 } else {
@@ -231,14 +234,7 @@ export default function WordSearch() {
               })}
             </div>
           ))}
-          {userWon && (
-            <p
-              style={{ top: "35%", left: "54%" }}
-              className=" animate-retro-drop-in pixel-shadow text-5xl z-50 absolute  "
-            >
-              You win!
-            </p>
-          )}
+          <EndOfGameAnim gameStatus={gameStatus} />
         </div>
       </section>
       <section className="bg-indigo-950 p-10">
@@ -246,17 +242,18 @@ export default function WordSearch() {
           {wordList.map((word, i) => (
             <motion.p
               key={i}
-              className={clsx(word.found && "text-yellow-500 underline", "pixel-clean")}
+              className={clsx(
+                word.found && "text-yellow-500 underline",
+                "pixel-clean"
+              )}
               animate={word.found ? { scale: [1, 1.3, 1] } : undefined}
-            
             >
               {word.word}
             </motion.p>
           ))}
         </div>
         <div className="flex gap-5 items-center justify-center">
-          <Button           className="mt-8" button={playAgainButton} />
-       
+          <Button className="mt-8" button={playAgainButton} />
         </div>
       </section>
     </>

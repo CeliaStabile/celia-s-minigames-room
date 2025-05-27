@@ -5,15 +5,18 @@ import Keyboard from "./Keyboard";
 import Drawing from "./Drawing";
 import Button from "../../components/Button/Button";
 import type { GameStatus } from "../../types";
+import EndOfGameAnim from "../../components/EndOfGameAnim";
+
+//generate a word in the data list and give back an object for the game
+function generateWord(): { letter: string; found: boolean }[] {
+  const word = wordData[Math.floor(Math.random() * wordData.length)];
+  return [...word].map((letter) => ({ letter, found: false }));
+}
 
 export default function Hangman() {
-  const [randomWordIndex, setRandomWordIndex] = useState<number>(
-    Math.floor(Math.random() * wordData.length)
-  );
-  const currentWord = wordData[randomWordIndex];
   const [wordToFind, setWordToFind] = useState<
     { letter: string; found: boolean }[]
-  >([...currentWord].map((letter) => ({ letter: letter, found: false })));
+  >(() => generateWord());
 
   //stocker la liste des lettres déja utilisées
   const [usedLetters, setUsedLetters] = useState<string[] | []>([]);
@@ -24,13 +27,17 @@ export default function Hangman() {
   //Game status : perdu, gagné
   const [gameStatus, setGameStatus] = useState<GameStatus>("pending");
 
+  //Reveal all : show the word when you loose
+  const [revealLetters, setRevealLetters] = useState<boolean>(false);
+
   const button = {
     text: "Play again",
     onClick: handlePlayAgainClick,
   };
 
-  console.log(wordToFind);
-  //on click sur clavier function :
+  console.log("feel like cheating? The word is: ", wordToFind);
+ 
+
   function handleLetterClick(letter: string) {
     setUsedLetters((prev) => [...prev, letter]);
 
@@ -48,46 +55,41 @@ export default function Hangman() {
     }
   }
 
+  //check gameStatus: is the word found ? Or are there too many mistakes
   useEffect(() => {
-    // vérifier si toutes les lettres de word to find sont found true.
     if (wordToFind.every((word) => word.found)) setGameStatus("win");
 
-    if (userErrors > 6) setGameStatus("lose");
+    if (userErrors > 6) {
+      setGameStatus("lose");
+      setRevealLetters(true);
+    }
   }, [userErrors, wordToFind]);
 
-  //button play again
+  //button play again that resets everything
   function handlePlayAgainClick() {
     setUsedLetters([]);
     setUserErrors(0);
     setGameStatus("pending");
-    setRandomWordIndex(Math.floor(Math.random() * wordData.length));
-    setWordToFind(
-      [...currentWord].map((letter) => ({ letter: letter, found: false }))
-    );
+    setRevealLetters(false);
+    setWordToFind(generateWord());
   }
 
   return (
-    <div className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative gap-10">
+    <div className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative gap-5">
       <Drawing errors={userErrors} className={"w-1/2"} />
-      <HangmanWord word={wordToFind} />
+      <HangmanWord
+        revealAll={revealLetters}
+        word={wordToFind}
+        className="mb-5"
+      />
       <Keyboard
         onClick={handleLetterClick}
         usedLetters={usedLetters}
         gameStatus={gameStatus}
-        className="lg:w-2/3 mb-6 "
+        className="lg:w-2/3 "
       />
-
-      {gameStatus !== "pending" && (
-        <p
-          style={{ top: "35%", left: "54%" }}
-          className=" animate-retro-drop-in pixel-shadow text-5xl z-50 absolute text-center  "
-        >
-          {gameStatus === "win" ? "You win!" : "You lose..."}
-        </p>
-      )}
-
+      <EndOfGameAnim gameStatus={gameStatus} />
       <Button button={button} />
-
     </div>
   );
 }
