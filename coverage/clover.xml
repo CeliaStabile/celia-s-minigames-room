@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1748515891774" clover="3.2.0">
+  <project timestamp="1748515891774" name="All files">
+    <metrics statements="448" coveredstatements="357" conditionals="113" coveredconditionals="107" methods="21" coveredmethods="17" elements="582" coveredelements="481" complexity="0" loc="448" ncloc="448" packages="5" files="12" classes="12"/>
+    <package name="src">
+      <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="App.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/App.tsx">
+        <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="83" coveredstatements="18" conditionals="9" coveredconditionals="6" methods="5" coveredmethods="2"/>
+      <file name="Banner.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/Banner.tsx">
+        <metrics statements="31" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+      </file>
+      <file name="EndOfGameAnim.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/EndOfGameAnim.tsx">
+        <metrics statements="18" coveredstatements="18" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="14" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="48" type="stmt"/>
+        <line num="16" count="48" type="stmt"/>
+        <line num="17" count="48" type="stmt"/>
+        <line num="18" count="48" type="stmt"/>
+        <line num="19" count="48" type="stmt"/>
+        <line num="20" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="48" type="stmt"/>
+        <line num="34" count="48" type="stmt"/>
+      </file>
+      <file name="GameCard.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/GameCard.tsx">
+        <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="Navbar.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/Navbar.tsx">
+        <metrics statements="12" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="ScrollToTop.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/ScrollToTop.tsx">
+        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Button">
+      <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="Button.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/components/Button/Button.tsx">
+        <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="13" count="48" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="48" type="stmt"/>
+        <line num="16" count="48" type="stmt"/>
+        <line num="17" count="48" type="stmt"/>
+        <line num="18" count="48" type="cond" truecount="0" falsecount="1"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="48" type="stmt"/>
+        <line num="26" count="48" type="stmt"/>
+        <line num="27" count="48" type="stmt"/>
+        <line num="29" count="48" type="stmt"/>
+        <line num="30" count="48" type="stmt"/>
+        <line num="32" count="48" type="stmt"/>
+        <line num="35" count="48" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.games.Hangman">
+      <metrics statements="138" coveredstatements="138" conditionals="29" coveredconditionals="29" methods="8" coveredmethods="8"/>
+      <file name="Drawing.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/games/Hangman/Drawing.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="11" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="20" type="stmt"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="20" type="stmt"/>
+        <line num="16" count="20" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+      </file>
+      <file name="Hangman.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/games/Hangman/Hangman.tsx">
+        <metrics statements="71" coveredstatements="71" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="20" type="stmt"/>
+        <line num="19" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="20" type="stmt"/>
+        <line num="25" count="20" type="stmt"/>
+        <line num="28" count="20" type="stmt"/>
+        <line num="31" count="20" type="stmt"/>
+        <line num="33" count="20" type="stmt"/>
+        <line num="34" count="20" type="stmt"/>
+        <line num="35" count="20" type="stmt"/>
+        <line num="36" count="20" type="stmt"/>
+        <line num="38" count="20" type="stmt"/>
+        <line num="41" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="48" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="49" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="53" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="54" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="55" count="9" type="stmt"/>
+        <line num="56" count="12" type="stmt"/>
+        <line num="59" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="60" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="18" type="cond" truecount="1" falsecount="0"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="20" type="stmt"/>
+        <line num="69" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="77" count="20" type="stmt"/>
+        <line num="78" count="20" type="stmt"/>
+        <line num="79" count="20" type="stmt"/>
+        <line num="80" count="20" type="stmt"/>
+        <line num="81" count="20" type="stmt"/>
+        <line num="82" count="20" type="stmt"/>
+        <line num="83" count="20" type="stmt"/>
+        <line num="84" count="20" type="stmt"/>
+        <line num="85" count="20" type="stmt"/>
+        <line num="86" count="20" type="stmt"/>
+        <line num="87" count="20" type="stmt"/>
+        <line num="89" count="20" type="stmt"/>
+        <line num="90" count="20" type="stmt"/>
+        <line num="91" count="20" type="stmt"/>
+        <line num="92" count="20" type="stmt"/>
+        <line num="93" count="20" type="stmt"/>
+        <line num="94" count="20" type="stmt"/>
+        <line num="95" count="20" type="stmt"/>
+        <line num="96" count="20" type="stmt"/>
+        <line num="97" count="20" type="stmt"/>
+        <line num="98" count="20" type="stmt"/>
+        <line num="100" count="20" type="stmt"/>
+      </file>
+      <file name="HangmanWord.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/games/Hangman/HangmanWord.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="9" count="21" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="21" type="stmt"/>
+        <line num="13" count="21" type="stmt"/>
+        <line num="14" count="21" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="63" type="stmt"/>
+        <line num="16" count="63" type="stmt"/>
+        <line num="17" count="63" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="63" type="stmt"/>
+        <line num="19" count="63" type="stmt"/>
+        <line num="20" count="63" type="stmt"/>
+        <line num="21" count="21" type="stmt"/>
+        <line num="22" count="21" type="stmt"/>
+        <line num="25" count="21" type="stmt"/>
+      </file>
+      <file name="Keyboard.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/games/Hangman/Keyboard.tsx">
+        <metrics statements="46" coveredstatements="46" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="20" type="stmt"/>
+        <line num="44" count="20" type="stmt"/>
+        <line num="46" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="520" type="stmt"/>
+        <line num="48" count="520" type="stmt"/>
+        <line num="49" count="520" type="stmt"/>
+        <line num="50" count="520" type="stmt"/>
+        <line num="51" count="520" type="cond" truecount="1" falsecount="0"/>
+        <line num="52" count="520" type="cond" truecount="1" falsecount="0"/>
+        <line num="53" count="520" type="cond" truecount="1" falsecount="0"/>
+        <line num="54" count="520" type="stmt"/>
+        <line num="56" count="520" type="stmt"/>
+        <line num="57" count="520" type="stmt"/>
+        <line num="59" count="20" type="stmt"/>
+        <line num="60" count="20" type="stmt"/>
+        <line num="63" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.games.Wordsearch">
+      <metrics statements="193" coveredstatements="186" conditionals="72" coveredconditionals="71" methods="6" coveredmethods="6"/>
+      <file name="Wordsearch.tsx" path="/Users/celiastabile/Desktop/minigames/minigames/src/games/Wordsearch/Wordsearch.tsx">
+        <metrics statements="193" coveredstatements="186" conditionals="72" coveredconditionals="71" methods="6" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="12" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="28" type="stmt"/>
+        <line num="15" count="28" type="stmt"/>
+        <line num="16" count="28" type="stmt"/>
+        <line num="17" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="28" type="stmt"/>
+        <line num="19" count="28" type="stmt"/>
+        <line num="22" count="28" type="stmt"/>
+        <line num="23" count="28" type="stmt"/>
+        <line num="24" count="28" type="stmt"/>
+        <line num="25" count="28" type="stmt"/>
+        <line num="27" count="28" type="stmt"/>
+        <line num="28" count="28" type="stmt"/>
+        <line num="29" count="28" type="stmt"/>
+        <line num="32" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="37" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="44" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="47" count="5" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="63" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="5" type="stmt"/>
+        <line num="70" count="5" type="stmt"/>
+        <line num="71" count="5" type="stmt"/>
+        <line num="72" count="5" type="stmt"/>
+        <line num="75" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="14" type="stmt"/>
+        <line num="77" count="14" type="stmt"/>
+        <line num="78" count="14" type="stmt"/>
+        <line num="79" count="14" type="stmt"/>
+        <line num="80" count="14" type="stmt"/>
+        <line num="82" count="5" type="stmt"/>
+        <line num="83" count="5" type="stmt"/>
+        <line num="85" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="87" count="5" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
+        <line num="91" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="92" count="5" type="stmt"/>
+        <line num="95" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="98" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="99" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="101" count="3" type="stmt"/>
+        <line num="102" count="3" type="stmt"/>
+        <line num="103" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="106" count="5" type="stmt"/>
+        <line num="109" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="110" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="112" count="5" type="stmt"/>
+        <line num="115" count="5" type="stmt"/>
+        <line num="116" count="5" type="stmt"/>
+        <line num="119" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="120" count="3" type="stmt"/>
+        <line num="121" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="122" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="123" count="2" type="stmt"/>
+        <line num="124" count="2" type="stmt"/>
+        <line num="125" count="5" type="stmt"/>
+        <line num="128" count="5" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="5" type="stmt"/>
+        <line num="135" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="136" count="5" type="stmt"/>
+        <line num="137" count="28" type="stmt"/>
+        <line num="140" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="141" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="142" count="28" type="stmt"/>
+        <line num="146" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="147" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="148" count="28" type="stmt"/>
+        <line num="150" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="151" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="152" count="1" type="stmt"/>
+        <line num="153" count="1" type="stmt"/>
+        <line num="154" count="1" type="stmt"/>
+        <line num="155" count="1" type="stmt"/>
+        <line num="156" count="1" type="stmt"/>
+        <line num="157" count="1" type="stmt"/>
+        <line num="158" count="1" type="stmt"/>
+        <line num="160" count="28" type="stmt"/>
+        <line num="161" count="28" type="stmt"/>
+        <line num="162" count="28" type="stmt"/>
+        <line num="163" count="28" type="stmt"/>
+        <line num="165" count="28" type="stmt"/>
+        <line num="166" count="28" type="stmt"/>
+        <line num="167" count="28" type="stmt"/>
+        <line num="168" count="28" type="stmt"/>
+        <line num="169" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="170" count="84" type="stmt"/>
+        <line num="171" count="84" type="cond" truecount="1" falsecount="0"/>
+        <line num="173" count="252" type="stmt"/>
+        <line num="174" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="175" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="178" count="252" type="stmt"/>
+        <line num="179" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="180" count="54" type="stmt"/>
+        <line num="181" count="54" type="cond" truecount="2" falsecount="0"/>
+        <line num="182" count="54" type="stmt"/>
+        <line num="185" count="252" type="stmt"/>
+        <line num="186" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="187" count="54" type="cond" truecount="2" falsecount="0"/>
+        <line num="190" count="252" type="cond" truecount="2" falsecount="0"/>
+        <line num="192" count="252" type="stmt"/>
+        <line num="193" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="194" count="18" type="stmt"/>
+        <line num="195" count="252" type="cond" truecount="2" falsecount="0"/>
+        <line num="196" count="5" type="stmt"/>
+        <line num="197" count="234" type="cond" truecount="2" falsecount="0"/>
+        <line num="198" count="8" type="stmt"/>
+        <line num="199" count="229" type="cond" truecount="2" falsecount="0"/>
+        <line num="200" count="4" type="stmt"/>
+        <line num="201" count="221" type="cond" truecount="1" falsecount="0"/>
+        <line num="202" count="217" type="stmt"/>
+        <line num="203" count="217" type="stmt"/>
+        <line num="205" count="252" type="stmt"/>
+        <line num="206" count="252" type="stmt"/>
+        <line num="207" count="252" type="stmt"/>
+        <line num="208" count="252" type="stmt"/>
+        <line num="209" count="252" type="stmt"/>
+        <line num="210" count="252" type="stmt"/>
+        <line num="211" count="252" type="stmt"/>
+        <line num="212" count="252" type="stmt"/>
+        <line num="213" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="214" count="252" type="stmt"/>
+        <line num="215" count="252" type="cond" truecount="1" falsecount="0"/>
+        <line num="216" count="18" type="cond" truecount="1" falsecount="0"/>
+        <line num="217" count="234" type="cond" truecount="1" falsecount="0"/>
+        <line num="218" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="219" count="229" type="cond" truecount="1" falsecount="0"/>
+        <line num="220" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="221" count="221" type="stmt"/>
+        <line num="223" count="252" type="stmt"/>
+        <line num="224" count="252" type="stmt"/>
+        <line num="225" count="252" type="cond" truecount="2" falsecount="0"/>
+        <line num="226" count="252" type="stmt"/>
+        <line num="228" count="252" type="stmt"/>
+        <line num="229" count="252" type="stmt"/>
+        <line num="231" count="84" type="stmt"/>
+        <line num="232" count="84" type="stmt"/>
+        <line num="233" count="28" type="stmt"/>
+        <line num="234" count="28" type="stmt"/>
+        <line num="235" count="28" type="stmt"/>
+        <line num="236" count="28" type="stmt"/>
+        <line num="237" count="28" type="stmt"/>
+        <line num="238" count="28" type="stmt"/>
+        <line num="239" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="240" count="55" type="stmt"/>
+        <line num="241" count="55" type="stmt"/>
+        <line num="242" count="55" type="stmt"/>
+        <line num="243" count="55" type="cond" truecount="1" falsecount="0"/>
+        <line num="244" count="55" type="stmt"/>
+        <line num="245" count="55" type="stmt"/>
+        <line num="246" count="55" type="cond" truecount="2" falsecount="0"/>
+        <line num="248" count="55" type="stmt"/>
+        <line num="249" count="55" type="stmt"/>
+        <line num="250" count="28" type="stmt"/>
+        <line num="251" count="28" type="stmt"/>
+        <line num="252" count="28" type="stmt"/>
+        <line num="253" count="28" type="stmt"/>
+        <line num="254" count="28" type="stmt"/>
+        <line num="255" count="28" type="stmt"/>
+        <line num="256" count="28" type="stmt"/>
+        <line num="258" count="28" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

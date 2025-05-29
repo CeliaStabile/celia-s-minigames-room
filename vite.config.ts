@@ -9,5 +9,19 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./vitest.setup.ts",
+    coverage: {
+      exclude: [
+        "dist/**",
+        "**/tailwind.config.js",
+        "**/postcss.config.js",
+        "**/eslint.config.js",
+        "**/vite.config.ts",
+        "**/vite-env.d.ts",
+        "**/src/main.tsx",
+        "**/src/router/**",
+        "**/src/types/**",
+        "**/src/pages/**",
+      ],
+    },
   },
 });

@@ -92,7 +92,7 @@ export default function Hangman() {
           gameStatus={gameStatus}
           className="lg:w-2/3 "
         />
-        <Button button={button} />
+        <Button button={button} data-testid={"play-again"}/>
       </div>
       <EndOfGameAnim gameStatus={gameStatus} />
     </section>

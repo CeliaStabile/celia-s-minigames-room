@@ -12,7 +12,7 @@ export default function HangmanWord({ word, revealAll, className }: HangmanWordP
     return (
         <section className={clsx("flex gap-3 w-full items-center justify-center", className)}>
         {word.map((item, index) => (
-          <div key={index} className="flex flex-col items-center w-5">
+          <div data-testid={"word-letter"} key={index} className="flex flex-col items-center w-5">
             <div className="h-6 text-lg">
               {item.found || revealAll ? item.letter : ""}
             </div>
