@@ -1,4 +1,4 @@
-import type { GameStatus } from "../types";
+import type { GameStatus } from "@types";
 import clsx from "clsx";
 
 type EndOfGameAnimProps = {

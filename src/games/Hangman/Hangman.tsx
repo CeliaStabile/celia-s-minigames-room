@@ -3,9 +3,9 @@ import wordData from "../../data/hangmandata.json";
 import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
 import Drawing from "./Drawing";
-import Button from "../../components/Button/Button";
-import type { GameStatus } from "../../types";
-import EndOfGameAnim from "../../components/EndOfGameAnim";
+import Button from "@components/Button/Button";
+import type { GameStatus } from "@types";
+import EndOfGameAnim from "@components/EndOfGameAnim";
 
 //generate a word in the data list and give back an object for the game
 function generateWord(): { letter: string; found: boolean }[] {

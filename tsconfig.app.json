@@ -23,7 +23,15 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
+    /* Types + Aliases */
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "baseUrl": ".", // ← nécessaire pour que "paths" fonctionne
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@types/*": ["src/types/*"],
+      "@types": ["src/types/index.ts"]
+    }
   },
   "include": ["src", "vitest.setup.ts"]
 }

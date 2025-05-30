@@ -1,10 +1,19 @@
-{
-  "compilerOptions": {
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
-  },
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
-}
+
+  {
+    "compilerOptions": {
+      "types": ["vitest/globals", "@testing-library/jest-dom"],
+      "baseUrl": ".",                         
+      "paths": {
+        "@components/*": ["src/components/*"],
+        "@pages/*": ["src/pages/*"],
+        "@types/*": ["src/types/*"]
+      }
+    },
+    "files": [],
+    "references": [
+      { "path": "./tsconfig.app.json" },
+      { "path": "./tsconfig.node.json" }
+    ]
+  }
+  
+

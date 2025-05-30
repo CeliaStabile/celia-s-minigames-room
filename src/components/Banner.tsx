@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { ButtonData } from "../types";
+import type { ButtonData } from "@types";
 import Button from "./Button/Button";
 import GameCard from "./GameCard";
 

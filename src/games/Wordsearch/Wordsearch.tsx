@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { motion } from "motion/react";
 import wordsearchData from "../../data/wordsearchdata.json";
-import Button from "../../components/Button/Button";
-import EndOfGameAnim from "../../components/EndOfGameAnim";
-import type { GameStatus } from "../../types";
+import Button from "@components/Button/Button";
+import EndOfGameAnim from "@components/EndOfGameAnim";
+import type { GameStatus } from "@types";
 
 type Position = [number, number];
 type Word = { word: string; found: boolean };

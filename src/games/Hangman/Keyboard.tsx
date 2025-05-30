@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { GameStatus } from "../../types";
+import type { GameStatus } from "@types";
 
 type KeyboardProps = {
     onClick: (item: string) => void,
