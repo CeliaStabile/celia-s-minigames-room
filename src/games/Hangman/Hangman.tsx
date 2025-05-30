@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import wordData from "../../data/hangmandata.json";
 import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
@@ -29,6 +29,8 @@ export default function Hangman() {
 
   //Reveal all : show the word when you loose
   const [revealLetters, setRevealLetters] = useState<boolean>(false);
+
+  const topRef = useRef<HTMLElement | null >(null)
 
   const button = {
     text: "Play again",
@@ -63,6 +65,11 @@ export default function Hangman() {
       setGameStatus("lose");
       setRevealLetters(true);
     }
+
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+
   }, [userErrors, wordToFind]);
 
   //button play again that resets everything
@@ -75,7 +82,7 @@ export default function Hangman() {
   }
 
   return (
-    <section className="relative">
+    <section className="relative" ref={topRef}>
       <div className="pt-10 pb-5 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm gap-5">
         <Drawing errors={userErrors} className={"w-1/2"} />
       </div>
