@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import clsx from "clsx";
-import { motion } from "motion/react";
 import wordsearchData from "../../data/wordsearchdata.json";
 import Button from "@components/Button/Button";
 import EndOfGameAnim from "@components/EndOfGameAnim";
-import type { GameStatus } from "@types";
-
-type Position = [number, number];
-type Word = { word: string; found: boolean };
+import WordList from "./WordList";
+import Grid from "./Grid";
+import type { GameStatus, Word, Position } from "@types";
 
 export default function WordSearch() {
   //define grid and words
@@ -29,7 +26,7 @@ export default function WordSearch() {
   const [gameStatus, setGameStatus] = useState<GameStatus>("pending");
 
   //Record selected start and end cells coordinates
-  function handleClick(x: number, y: number) {
+  function handleStartClick(x: number, y: number) {
     if (!startCell) {
       setStartCell([x, y]);
     } else if (!endCell) {
@@ -141,7 +138,6 @@ export default function WordSearch() {
     if (wordList.every((word) => word.found)) setGameStatus("win");
   }, [wordList]);
 
-
   //update wordlist when level change
   useEffect(() => {
     setWordList(currentLevel.words.map((w) => ({ word: w, found: false })));
@@ -166,89 +162,19 @@ export default function WordSearch() {
     <>
       <section className="p-10 flex flex-col items-center justify-center bg-blue-900 text-xs lg:text-sm relative ">
         <div className="relative  z-20">
-          {grid.map((row, x) => (
-            <div key={x} className="flex cursor-pointer ">
-              {row.map((cell, y) => {
-                //cell has been selected by user but word is not in wordlist
-                const isSelected =
-                  selectedCells &&
-                  selectedCells.some(([row, col]) => row === x && col === y);
-
-                //cell is selected and word is in word list
-                const isWinning =
-                  winningSelectedCells &&
-                  winningSelectedCells.some(
-                    ([row, col]) => row === x && col === y
-                  );
-
-                //cell has been used to find a word
-                const hasBeenUsed =
-                  usedCells &&
-                  usedCells.some(([row, col]) => row === x && col === y);
-
-                //is the first cell
-                const isStart = startCell?.[0] === x && startCell?.[1] === y;
-
-                let cellBackground = "";
-                if (isWinning) {
-                  cellBackground = "z-10 bg-yellow-500";
-                } else if (isSelected) {
-                  cellBackground = "z-10 bg-red-300";
-                } else if (isStart) {
-                  cellBackground = "z-0 bg-blue-400";
-                } else if (hasBeenUsed) {
-                  cellBackground = "z-0 bg-indigo-950";
-                } else {
-                  cellBackground = "hover:bg-blue-400";
-                }
-
-                return (
-                  <motion.div
-                    className={clsx([
-                      "border-1 border-black w-9 h-9 flex justify-center items-center pixel-clean",
-                      cellBackground,
-                    ])}
-                    data-testid={`cell-${x}-${y}`}
-                    key={y}
-                    onClick={() => handleClick(x, y)}
-                    animate={
-                      isWinning
-                        ? { scale: [1, 1.3, 1] }
-                        : isSelected
-                        ? { x: [-5, 5, -5, 5, 0] }
-                        : isStart
-                        ? { scale: [1, 1.15, 1] }
-                        : undefined
-                    }
-                    transition={{
-                      duration: 0.4,
-                      ease: isWinning ? "easeInOut" : undefined,
-                    }}
-                  >
-                    <p> {cell}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          ))}
+          <Grid
+            selectedCells={selectedCells}
+            usedCells={usedCells}
+            winningSelectedCells={winningSelectedCells}
+            startCell={startCell}
+            handleClick={handleStartClick}
+            grid={grid}
+          />
           <EndOfGameAnim gameStatus={gameStatus} />
         </div>
       </section>
       <section className="bg-indigo-950 p-10">
-        <div className="flex gap-5  flex-wrap justify-center">
-          {wordList.map((word, i) => (
-            <motion.p
-              key={i}
-              className={clsx(
-                word.found && "text-yellow-500 underline",
-                "pixel-clean"
-              )}
-              animate={word.found ? { scale: [1, 1.3, 1] } : undefined}
-            >
-              {word.word}
-            </motion.p>
-          ))}
-        </div>
+        <WordList wordList={wordList} />
         <div className="flex gap-5 items-center justify-center">
           <Button className="mt-8" button={playAgainButton} />
         </div>
